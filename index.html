@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Girardot</title>
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            display: none; 
+        }
+        #preloader img {
+            width: 100px; 
+        }
+        /* Estilos para empequeñecer la imagen en un 30% */
+        .home__img img {
+            width: 70%; /* Empequeñece la imagen en un 30% */
+            display: block; /* Para centrar la imagen */
+            margin: 0 auto; /* Para centrar la imagen */
+        }
+        /* Estilos para agregar espacio entre el párrafo y el botón */
+        .home__description {
+            margin-bottom: 20px; 
+        }
+        /* Estilos para las redes sociales */
+        .social__icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; 
+        }
+        .social__icon {
+            font-size: 24px;
+            color: #333; /* Color de las redes sociales */
+            margin: 0 5px; /* Ajusta el espacio entre los iconos */
+        }
+
+        /* Estilos para dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            .social__icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <img src="assets/img/carga.gif" alt="Cargando...">
+    </div>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                Centro Misionero Bethesda Girardot
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    
+                    <li class="nav__item">
+                        <a href="https://www.youtube.com/@conociendoajesus497" class="nav__link" onclick="showLoader('https://www.youtube.com/@conociendoajesus497')"> Prédicas</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="CMB.html" class="nav__link" onclick="showLoader('CMB.html')">540 AM</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="sg.html" class="nav__link" onclick="showLoader('sg.html')">Mapa</a>
+                    </li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-grid-alt'></i>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="home">
+            <div class="home__container container">
+                <div class="home__data">
+                    <span class="home__subtitle">Pastores Elber Hurtado y Yurany Gamba</span>
+                    <h1 class="home__title">bienvenidos/as</h1>
+                    <p class="home__description">
+                        Marcos 9:23<br>Para el que cree, todo es posible
+                    </p>
+                    <!-- Redes sociales -->
+                    <div class="social__icons">
+                        <a href="https://wa.me/+573176587939" class="social__icon" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100070104454004" class="social__icon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJvnqtctXZggSqjlGmTHznXWccfRmTnBTRQbChgSgRFBFkTJttmZgqfHKfBVNKcFMBDBxxq" class="social__icon" target="_blank"><i class='bx bx-mail-send'></i></a>
+                    </div>
+                </div>
+                <div class="home__img">
+                    <img src="assets/img/CMB.png" alt="">
+                    <div class="home__shadow"></div>
+                </div>
+            </div>
+            <footer class="home__footer">
+                <span>By David Santiago Cossio Sandoval</span>
+                <span>|</span>
+                <span>+57 3042858889</span>
+            </footer>
+        </section>
+    </main>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function showLoader(redirectURL) {
+            document.getElementById("preloader").style.display = "flex";
+            setTimeout(function () {
+                document.getElementById("preloader").style.display = "none";
+                window.location.href = redirectURL;
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
